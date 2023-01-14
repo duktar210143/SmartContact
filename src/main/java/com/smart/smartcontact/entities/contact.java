@@ -1,13 +1,15 @@
 package com.smart.smartcontact.entities;
 
-import jakarta.persistence.*;
+
+import javax.persistence.*;
+
 
 @Entity
-@Table(name="Contact")
+@Table (name="Contact")
 
 public class contact {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue (strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String secondName;

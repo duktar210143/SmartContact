@@ -1,14 +1,13 @@
 package com.smart.smartcontact.entities;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 
+import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="User")
+@Table (name="User")
 
 
 public class User {
@@ -16,7 +15,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @NotBlank (message="Name field is required")
+    @NotBlank  (message="Name field is required")
     @Size(min=2,max = 30,message = "minimum of two and maximum of 20 characters required" )
     private String name;
     @Column(unique = true)
