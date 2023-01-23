@@ -24,14 +24,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto text-uppercase">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" th:href="@{/}">About</a>
+                <a class="nav-link" th:href="@{/about}">About</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#" >Login</a>
+                <a class="nav-link" th:href="@{user/index}" >Login</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/signup}" >Signup</a>
@@ -57,20 +57,19 @@
                 <p class="text-white">
                 Our contact management application makes it easy for users to store, organize, and manage their contacts.<br>
                 With a simple and intuitive interface, users can quickly and easily add new contacts, edit existing ones, and search for specific contacts.<br>
-                The application also includes powerful tagging and categorization features, allowing users to customize their contact lists to fit their needs.<br>
                 </p>
                 </p>
             </div>
             <div class="col-md-4">
                 <h4 class="text-white">Follow us</h4>
                 <p class="text-white">
-                    <a href="https://www.facebook.com/">Faebook<i class="fab fa-facebook-square"></i></a> <br>
+                    <a href="https://www.facebook.com/">Facebook<i class="fab fa-facebook-square"></i></a> <br>
                     <a href="https://twitter.com/?lang=en">twitter<i class="fab fa-twitter-square"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                 </p>
             </div>
         </div>
-        <p class="text-center text-white">Copyright &copy; {{ 'now' | date('yyyy') }}</p>
+        <p class="text-center text-white">Copyright</p>
     </div>
 </footer>
 <!-- Optional JavaScript -->

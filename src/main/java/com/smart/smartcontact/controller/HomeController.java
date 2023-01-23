@@ -76,7 +76,8 @@ public class HomeController {
 
     }
 
-    @GetMapping("/Signin")
+
+    @RequestMapping("/signin")
     public String loginScreen(Model model){
         model.addAttribute("loginScreen");
         return "login";
