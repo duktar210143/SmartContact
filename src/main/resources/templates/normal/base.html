@@ -18,7 +18,7 @@
 </head>
 <body>
 <!--navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark  bg-dark ">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark  bg-dark ">
     <a class="navbar-brand" href="#">Smart contact</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -32,11 +32,9 @@
                 <a class="nav-link" ><span th:text="${user.name}"></span></a>
             </li>
 
-                <a class="nav-link" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" th:href="@{/user/index}">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/about}">About</a>
-            </li>
+
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/logout}" >Logout</a>
             </li>
@@ -44,19 +42,19 @@
     </div>
 </nav>
 
-<div class="sidebar">
+<div class="sidebar mt-3">
     <span onclick="toggleSidebar()" class="crossbtn">&times;</span>
-    <a href="#" class="items"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="#" th:href="@{/user/index}" class="items"><i class="fa-solid fa-house"></i> Home</a>
     <a href="#" class="items"><i class="fa-sharp fa-solid fa-address-card"></i> View Contacts</a>
-    <a href="#" class="items"><i class="fa-solid fa-pencil"></i> Add Contacts</a>
+    <a href="#" th:href="@{/user/add-contact}" class="items"><i class="fa-solid fa-pencil"></i> Add Contacts</a>
     <a href="#" class="items"><i class="fa-solid fa-user"></i> Your Profile</a>
     <a href="#" class="items"><i class="fa-sharp fa-solid fa-gear"></i> Settings</a>
-    <a href="#" class="items"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+    <a href="#" th:href="@{/logout}" class="items"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
     <div class="divider"></div>
 
 </div>
 
-<div class="content">
+<div class="content mt-5">
     <i onclick="toggleSidebar()" class="fas fa-bars m-3"></i>
     <div th:replace="${content}"></div>
 </div>
