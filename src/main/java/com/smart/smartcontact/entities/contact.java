@@ -98,4 +98,22 @@ public class contact {
     public void setAbout(String about) {
         this.about = about;
     }
+
+
+
+//    @Override
+//    public String toString() {
+//        return "contact{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", secondName='" + secondName + '\'' +
+//                ", work='" + work + '\'' +
+//                ", email='" + email + '\'' +
+//                ", phone='" + phone + '\'' +
+//                ", imageUrl='" + imageUrl + '\'' +
+//                ", about='" + about + '\'' +
+//                ", user=" + user +
+//                '}';
+//    }
+
 }
