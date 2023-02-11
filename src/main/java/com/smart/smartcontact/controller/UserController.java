@@ -8,6 +8,9 @@ import com.smart.smartcontact.entities.contact;
 import com.smart.smartcontact.helper.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -105,17 +108,25 @@ public class UserController {
     }
 
 //    handelers for show contact's
+//    perPageContact_Show=5
+//    current page =page[0];
 
-    @GetMapping("/show-contacts")
-    public String showContacts(Model m, Principal principal){
+    @GetMapping("/show-contacts/{page}")
+    public String showContacts(@PathVariable("page") Integer page, Model m, Principal principal){
         m.addAttribute("title","view contacts");
 
 //        show contact lists
         String userName = principal.getName();
+
+//        current Page
+//        contact per-page
+        Pageable pageable = PageRequest.of(page,3);
         User user = this.userRepository.getUserByUserName(userName);
-        List<contact> contacts = this.contactRepository.findContactsByUser(user.getId());
+        Page<contact> contacts = this.contactRepository.findContactsByUser(user.getId(),pageable);
 
         m.addAttribute("contacts",contacts);
+        m.addAttribute("currentPage",page);
+        m.addAttribute("totalPages",contacts.getTotalPages());
 
         return "normal/show_contacts";
     }
