@@ -24,6 +24,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/user")
@@ -75,6 +76,7 @@ public class UserController {
             if(file.isEmpty()){
 //                if the file is empty
                 System.out.println("the file is empty");
+                Contact.setImageUrl("smart_contact_profile.png");
             }
             else {
 //                upload the file to folder and update the name to contact
@@ -129,5 +131,18 @@ public class UserController {
         m.addAttribute("totalPages",contacts.getTotalPages());
 
         return "normal/show_contacts";
+    }
+
+//    showing individual contact details
+    @RequestMapping("/{id}/contacts")
+    public String view_detail(@PathVariable("id") Integer id,Model model)
+    {
+        System.out.println("id"+id);
+        Optional<contact> contactOptional = this.contactRepository.findById(id);
+        contact Contact = contactOptional.get();
+
+        model.addAttribute("Contact",Contact);
+
+        return "normal/contact_detail";
     }
 }

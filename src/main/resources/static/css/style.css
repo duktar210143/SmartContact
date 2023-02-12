@@ -89,6 +89,12 @@ body{
 .content{
     margin-left: 20%;
 }
+.contact_profile_picture{
+    width: 40px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+}
 
 
 
