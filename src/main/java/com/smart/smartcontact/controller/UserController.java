@@ -6,6 +6,7 @@ import com.smart.smartcontact.dao.UserRepository;
 import com.smart.smartcontact.entities.User;
 import com.smart.smartcontact.entities.contact;
 import com.smart.smartcontact.helper.Message;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.domain.Page;
@@ -150,5 +151,23 @@ public class UserController {
 
 
         return "normal/contact_detail";
+    }
+
+//    delete handler
+    @GetMapping("/delete/{id}")
+    public String deleteContact(@PathVariable("id") Integer id, Principal principal, HttpSession session){
+        Optional<contact> contactOptional = this.contactRepository.findById(id);
+        contact Contact =  contactOptional.get();
+
+        String userName = principal.getName();
+        User user = userRepository.getUserByUserName(userName);
+
+        if(user.getId()==Contact.getUser().getId()) {
+            Contact.setUser(null);
+            this.contactRepository.delete(Contact);
+            session.setAttribute("message",new Message("Contact deleted successfully","success"));
+        }
+
+        return "redirect:/user/show-contacts/0";
     }
 }

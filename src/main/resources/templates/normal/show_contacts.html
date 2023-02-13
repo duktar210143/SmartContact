@@ -38,7 +38,7 @@
                     </td>
                     <td th:text="${c.phone}"></td>
                     <td>
-                        <button class="btn btn-danger btn-sm"></button>
+                        <a href="#" th:onclick="|deleteContact(${c.id})|" class="btn btn-danger btn-sm"></a>
                         <button class="btn btn-primary btn-sm"></button>
 
                     </td>
