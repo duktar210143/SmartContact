@@ -135,13 +135,19 @@ public class UserController {
 
 //    showing individual contact details
     @RequestMapping("/{id}/contacts")
-    public String view_detail(@PathVariable("id") Integer id,Model model)
+    public String view_detail(@PathVariable("id") Integer id,Model model, Principal principal)
     {
         System.out.println("id"+id);
         Optional<contact> contactOptional = this.contactRepository.findById(id);
         contact Contact = contactOptional.get();
 
-        model.addAttribute("Contact",Contact);
+//        validate if the user logged in is the only user checking his contacts
+        String userName = principal.getName();
+        User user = userRepository.getUserByUserName(userName);
+
+        if(user.getId()==Contact.getUser().getId())
+            model.addAttribute("Contact",Contact);
+
 
         return "normal/contact_detail";
     }
