@@ -96,6 +96,19 @@ body{
     border-radius: 50%;
 }
 
+/*search contact CSS*/
+.search-container{
+    position: absolute;
+}
+.search-result{
+    position: relative;
+    background: white;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid gray;
+    display: none;
+}
+
 
 
 
