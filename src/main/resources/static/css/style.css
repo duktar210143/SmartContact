@@ -98,10 +98,10 @@ body{
 
 /*search contact CSS*/
 .search-container{
-    position: absolute;
+    position: relative;
 }
 .search-result{
-    position: relative;
+    position: absolute;
     background: white;
     width: 100%;
     padding: 10px;

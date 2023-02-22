@@ -1,6 +1,8 @@
 package com.smart.smartcontact.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 
@@ -20,6 +22,7 @@ public class contact {
     @Column(length = 500)
     private String about;
 
+    @JsonIgnore
     @ManyToOne
     private User user;
 
