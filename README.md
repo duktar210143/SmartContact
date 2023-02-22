@@ -17,7 +17,7 @@ To run the Contact Manager App on your local machine, follow these steps:
 Clone the repository to your local machine:
 bash
 Copy code
-git clone https://github.com/your-username/contact-manager-app.git
+https://github.com/duktar210143/SmartContact.git
 Open the project in your favorite IDE.
 Build and run the application.
 bash
