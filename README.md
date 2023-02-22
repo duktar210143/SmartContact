@@ -23,7 +23,7 @@ Build and run the application.
 bash
 Copy code
 ./mvnw spring-boot:run
-Open your web browser and go to http://localhost:8080 to access the Contact Manager App.
+Open your web browser and go to http://localhost:8282 to access the Contact Manager App.
 Usage
 
 To add a new contact, click the "Add Contact" button and fill in the details of the new contact.
