@@ -42,21 +42,5 @@ Spring Boot: A popular Java-based framework for building web applications.
 Thymeleaf: A Java-based template engine for building dynamic web pages.
 Hibernate: A Java-based ORM (Object-Relational Mapping) framework for working with databases.
 MySQL: A popular open-source relational database management system.
-Contribution
 
-If you want to contribute to the Contact Manager App, follow these steps:
 
-Fork the repository.
-Create a new branch with your changes.
-css
-Copy code
-git checkout -b my-feature-branch
-Make your changes and commit them.
-sql
-Copy code
-git commit -am 'Add some feature'
-Push your changes to your fork.
-perl
-Copy code
-git push origin my-feature-branch
-Create a pull request to merge your changes into the main repository.
